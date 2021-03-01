@@ -1,6 +1,6 @@
-#include "singe.h"
-#include "Animal.h"
-#include <math.h>
+#include "singe.h"				// Inclusion de la classe singe
+#include "Animal.h"				// Inclusion de la classe Animal
+#include <math.h>				// Inclusion de la classe Math pour les calculs
 
 Singe::Singe(std::string nom, float poids, bool son_enclos) : Animal(nom, poids){
 	this->poidsViande = poids/100;
@@ -42,4 +42,10 @@ std::string Singe::afficherAnimal() {
 	result += "Mange " + std::to_string(poidsFruits) + " kg de fruits par jour\n  ";
 	result += "Mange " + std::to_string(getPoidsHerbe()/7) + " kg d'herbe par jour\n";
 	return result;
+}
+
+Singe::~Singe() {
+	delete& poidsViande;
+	delete& poidsHerbe;
+	delete& poidsFruits;
 }

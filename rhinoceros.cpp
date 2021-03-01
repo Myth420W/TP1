@@ -1,13 +1,13 @@
-#include "rhinoceros.h"
-#include "Animal.h"
+#include "rhinoceros.h"		// Inclusion de la classe rhinocéros.h
+#include "Animal.h"			// Inclusion de la classe Animal
 
 Rhinoceros::Rhinoceros(std::string nom, float poids, int espace) : Animal(nom, poids) {
-	if (espace < 2000) {
+	if (espace < 2000) {				// Espace doit être minimum 2000 sinon c'est initialisé à 2000
 		espace = 2000;
 	}
 	this->espaceEnclos = espace;
-	this->poidsFruits = poids * float(0.5);
-	if ((poids * 0.02) > espace / 100) {
+	this->poidsFruits = poids * float(0.05);
+	if ((poids * 0.02) > espace / 100) {						// L'animal doit consommé au moins 2% de son poids en Herbe
 		this->poidsHerbes = (poids*float(0.02))-espace / 100;
 	}
 	else {
@@ -44,5 +44,7 @@ float Rhinoceros::getHerbes() {
 }
 
 Rhinoceros::~Rhinoceros() {
-	
+	delete& poidsViande;
+	delete& poidsFruits;
+	delete& poidsHerbes;
 }

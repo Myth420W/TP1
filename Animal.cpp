@@ -1,6 +1,4 @@
-#include "Animal.h"
-
-//Animal::Animal() {}
+#include "Animal.h"			// Inclusion de la classe Animal
 
 Animal::Animal(std::string son_nom, float son_poids) {
 	this->nom = son_nom;

@@ -1,8 +1,8 @@
-#include "tigre.h"
-#include "Animal.h"
+#include "tigre.h"		// Inclusion de la classe tigre
+#include "Animal.h"		// Inclusion de la classe Animal
 
 Tigre::Tigre(std::string nom, float poids) : Animal(nom, poids) {
-	this->poidsViande = poids / 20;
+	this->poidsViande = poids / 20;			// 5 % de son poids en Viande consommé
 }
 
 std::string Tigre::afficherAnimal() {
@@ -12,4 +12,10 @@ std::string Tigre::afficherAnimal() {
 	result += "Mange " + std::to_string(this->poidsFruits) + " kg de fruits par jour\n  ";
 	result += "Mange " + std::to_string(this->poidsHerbe) + " kg d'herbe par jour\n";
 	return result;
+}
+
+Tigre::~Tigre() {
+	delete& poidsViande;
+	delete& poidsHerbe;
+	delete& poidsFruits;
 }

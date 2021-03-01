@@ -6,7 +6,7 @@
 #include "tigre.h"
 #include "rhinoceros.h"
 
-int menu() {
+int menu() {		// Choix du menu
 	int choix=1;
 	std::cout << "[[ MENU ANIMAUX ]]" << "\n-------------------\n\t1. Ajouter un tigre\n\t2. Ajouter un singe\n\t3. Ajouter un rhinocéros\n\t4. Afficher les informations des animaux\n\t0. Quitter\n-------------------\n\tChoix: ";
 	std::cin >> choix;
@@ -19,8 +19,8 @@ int menu() {
 
 int main() {
 	int choix;
-	typedef Animal* animal_ptr;
-	animal_ptr* animals = new animal_ptr[250];	// 250 maximum pour les animaux
+	typedef Animal* animal_ptr;					// Pointeur de la classe Animal
+	animal_ptr* animals = new animal_ptr[250];	// 250 maximum pour les animaux avec un pointeur
 	
 	int i = 0;									// Incrémentation pour les animaux
 	int nb1 = 1;								// Incrémentation pour les tigres
@@ -37,11 +37,11 @@ int main() {
 				std::cout << "Animal #" << i + 1 << std::endl;
 
 				std::cout << "Tigre #" << nb1 << std::endl;
-					// Création des données
+					// Création du nom
 				std::string nom;
 				std::cout << "Nom: ";
 				std::cin >> nom;
-
+					// Création du poids
 				float poids;
 				std::cout << "Poids: ";
 				std::cin >> poids;
@@ -62,15 +62,15 @@ int main() {
 				std::cout << "Animal #" << i + 1 << std::endl;
 
 				std::cout << "Singe #" << nb2 << std::endl;
-				// Création des données
+					// Création du nom
 				std::string nom;
 				std::cout << "Nom: ";
 				std::cin >> nom;
-
+					// Création du poids
 				float poids;
 				std::cout << "Poids: ";
 				std::cin >> poids;
-
+					// Création de l'enclos
 				bool enclos;
 				std::cout << "Enclos (0-1): ";
 				std::cin >> enclos;
@@ -91,15 +91,15 @@ int main() {
 				std::cout << "Animal #" << i + 1 << std::endl;
 
 				std::cout << "Rhinocéros #" << nb3 << std::endl;
-				// Création des données
+					// Création du nom
 				std::string nom;
 				std::cout << "Nom: ";
 				std::cin >> nom;
-
+					// Création du poids
 				float poids;
 				std::cout << "Poids: ";
 				std::cin >> poids;
-
+					// Création de l'espace
 				int espace;
 				std::cout << "Espace >2000: ";
 				std::cin >> espace;
